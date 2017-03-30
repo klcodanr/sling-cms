@@ -6,7 +6,7 @@ A reference implementation of a simple Content Management System built in Apache
 
 Build an instance with of the Sling CMS
 
-    mvn clean install
+    mvn clean install -Drat.skip=true
     
 The JAR will be located under: `builder/target/org.apache.sling.cms-{VERSION].jar`
 
