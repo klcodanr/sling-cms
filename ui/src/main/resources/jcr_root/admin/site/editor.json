@@ -1,0 +1,19 @@
+{
+    "jcr:primaryType": "cms:page",
+    "sling:resourceType" : "cms/pages/editorpage",
+    "title" : "Page Editor",
+    "jcr:content" : {
+        "container" : {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType" : "fdn/components/container",
+            "editbar" : {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType" : "cms/components/editor/pageeditbar"
+            },
+            "pageedit" : {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType" : "cms/components/editor/pageedit"
+            }
+        }
+    }
+}

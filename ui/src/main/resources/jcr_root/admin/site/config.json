@@ -1,0 +1,102 @@
+{
+	"jcr:primaryType": "cms:page",
+	"sling:resourceType" : "cms/pages/adminSecurePage",
+	"title" : "Site Config",
+	"jcr:content" : {
+		"container" : {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType" : "fdn/components/container",
+			"siteconfig" : {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType" : "cms/components/fields/slingform",
+				"button": "Update Configuration",
+				"fields": {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType" : "fdn/components/container",
+					"assetEditor" : {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "cms/components/fields/pathfield",
+						"basePath":"/apps",
+						"label":"Asset Editor",
+						"name":"assetEditor"
+					},
+					"blogpanel" : {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/panel",
+						"title": "Blog Configuration",
+						"collapse": false,
+						"blogEnabled" : {
+							"jcr:primaryType": "nt:unstructured",
+							"sling:resourceType" : "cms/components/fields/selectfield",
+							"label":"Blog Enabled",
+							"name":"blogEnabled",
+							"options": {
+								"jcr:primaryType": "nt:unstructured",
+								"yes": {
+									"label": "Yes",
+									"value": true
+								},
+								"no": {
+									"label": "No",
+									"value": false
+								}
+							}
+						},
+						"blogEnabledTypeHint" : {
+							"jcr:primaryType": "nt:unstructured",
+							"sling:resourceType" : "cms/components/fields/hiddenfield",
+							"name":"blogEnabled@TypeHint",
+							"value": "Boolean"
+						 },
+						"blogType" : {
+							"jcr:primaryType": "nt:unstructured",
+							"sling:resourceType" : "cms/components/fields/datalist",
+							"label":"Post Resource Type",
+							"query": "SELECT * FROM [cms:component] WHERE [componentType]='Page'",
+							"queryLanguage": "JCR-SQL2",
+							"labelProperty": "jcr:title",
+							"valueProperty": "resourceType",
+							"name":"blogType"
+						}
+					},
+					
+					"fragmentpanel" : {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/panel",
+						"title": "Fragment Configuration",
+						"collapse": false,
+						"fragmentType" : {
+							"jcr:primaryType": "nt:unstructured",
+							"sling:resourceType" : "cms/components/fields/datalist",
+							"label":"Fragment Resource Type",
+							"query": "SELECT * FROM [cms:component] WHERE [componentType]='Page'",
+							"queryLanguage": "JCR-SQL2",
+							"labelProperty": "jcr:title",
+							"valueProperty": "resourceType",
+							"name":"fragmentType"
+						}
+					}
+					
+				}
+			},
+			"pagepanel" : {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/fields/panel",
+				"title": "Page Configuration",
+				"collapse": true,
+				"pagetypesHeader" : {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType": "fdn/components/richtext",
+					"text": "<h2>Page Types</h2>"
+				},
+				"pagetypes" : {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType": "cms/components/editor/editcontainer",
+					"availableTypes": "cms/components/editor/pagetype",
+					"includeResourceType": "fdn/components/container",
+					"includePath": "/jcr:content/pagetypes"
+				}
+			}
+		}
+	}
+}

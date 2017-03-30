@@ -1,0 +1,6 @@
+{
+	"jcr:primaryType": "cms:component",
+	"jcr:title": "Blog Post Component",
+	"componentType": "Page",
+	"resourceType": "reference/components/pages/blog"
+}

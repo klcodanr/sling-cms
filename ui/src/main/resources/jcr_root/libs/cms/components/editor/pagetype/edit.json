@@ -1,0 +1,33 @@
+ {
+	"jcr:primaryType": "nt:unstructured",
+	"sling:resourceType" : "cms/components/fields/slingform",
+	"button": "Save Page Type",
+	"fields": {
+		"jcr:primaryType": "nt:unstructured",
+		"sling:resourceType" : "fdn/components/container",
+		"label": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType" : "cms/components/fields/textfield",
+			"label": "Label",
+			"name": "label",
+			"required": true
+		},
+		"description": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType" : "cms/components/fields/textarea",
+			"label": "Description",
+			"name": "description"
+		},
+		"type": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType" : "cms/components/fields/datalist",
+			"query": "SELECT * FROM [cms:component] WHERE [componentType]='Page'",
+			"queryLanguage": "JCR-SQL2",
+			"labelProperty": "jcr:title",
+			"valueProperty": "resourceType",
+			"label": "Resource Type",
+			"name": "resourceType",
+			"required": true
+		}
+	}
+}

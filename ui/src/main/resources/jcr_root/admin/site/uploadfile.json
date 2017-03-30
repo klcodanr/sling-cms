@@ -1,0 +1,27 @@
+{
+    "jcr:primaryType": "cms:page",
+    "sling:resourceType" : "cms/pages/adminSecurePage",
+    "title" : "Upload File",
+    "jcr:content" : {
+        "container" : {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType" : "fdn/components/container",
+            "createfolderform": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType" : "cms/components/fields/slingform",
+				"button": "Upload File",
+				"fields": {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType" : "fdn/components/container",
+					"file": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "cms/components/fields/filefield",
+						"label": "File",
+						"name": "file",
+						"required": true
+					}
+				}
+			}
+        }
+    }
+}

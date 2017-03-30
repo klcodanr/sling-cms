@@ -1,0 +1,6 @@
+{
+	"jcr:primaryType": "cms:component",
+	"jcr:title": "Container",
+	"componentType": "General",
+	"resourceType": "fdn/components/container"
+}

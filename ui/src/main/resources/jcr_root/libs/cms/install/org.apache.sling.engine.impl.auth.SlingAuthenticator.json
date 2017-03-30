@@ -1,0 +1,8 @@
+{
+    "jcr:primaryType": "sling:OsgiConfig",
+    "sling.auth.requirements": [
+      "/bin",
+      "/admin",
+      "-/admin/login.html"
+    ]
+}

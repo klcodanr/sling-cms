@@ -1,0 +1,4 @@
+{
+	"jcr:primaryType": "cms:component",
+	"sling:resourceSuperType" : "cms/components/fields/basefield"
+}

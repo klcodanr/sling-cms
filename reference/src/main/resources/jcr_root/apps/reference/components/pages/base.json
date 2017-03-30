@@ -1,0 +1,5 @@
+{
+	"jcr:primaryType": "cms:component",
+	"jcr:title": "Base Page Component",
+	"resourceType": "fdn/components/container"
+}

@@ -1,0 +1,59 @@
+/* assetList */
+.asset-thumbnail {
+	text-align: center;
+	overflow: hidden;
+	height: 160px;
+}
+
+.asset-folder {
+	cursor: pointer;
+}
+
+.asset-thumbnail img {
+	height: 5em;
+}
+
+.asset-thumbnail .caption {
+	height: 40px;
+	overflow: auto;
+	display: block;
+	padding: 0 10px;
+}
+
+.asset-upload {
+	border: dashed 1px green;
+}
+
+.asset-upload.hover {
+	background: lightgreen;
+}
+
+.asset-upload.hover-error {
+	background: indianred;
+}
+
+.asset-upload .fa-upload {
+	color: green;
+}
+
+.breadcrumb li {
+	margin-right: 4px;
+}
+
+/* bootstrap modal scroll */
+.modal-dialog {
+	overflow-y: initial !important
+}
+
+.modal-body {
+	max-height: 250px;
+	overflow-y: auto;
+}
+
+.modal-body .input-group, .edit-page .input-group {
+	display: block;
+}
+
+.modal-body .row, .edit-page .row {
+	padding: 5px 0;
+}

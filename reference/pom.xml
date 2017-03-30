@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>cms</artifactId>
+        <groupId>org.apache.sling.cms</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>reference</artifactId>
+    <packaging>bundle</packaging>
+    <name>Sling CMS - Reference</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>2.0.1</version>
+                <configuration>
+                    <instructions>
+                        <Sling-Nodetypes>SLING-INF/nodetypes/nodetypes.cnd</Sling-Nodetypes>
+                        <Sling-Initial-Content>
+                            jcr_root/apps/reference;overwrite:=true;uninstall:=true;path:=/apps/reference
+                        </Sling-Initial-Content>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>autoInstallBundle</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <version>2.0.4-incubator</version>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                                <configuration>
+                                    <slingUrl>http://${sling.host}:${sling.port}/system/console</slingUrl>
+                                    <user>${sling.username}</user>
+                                    <password>${sling.password}</password>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

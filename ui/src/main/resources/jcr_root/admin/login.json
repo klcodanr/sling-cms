@@ -1,0 +1,15 @@
+{
+    "jcr:primaryType": "cms:page",
+    "sling:resourceType" : "cms/pages/adminPage",
+    "title" : "Login",
+    "jcr:content" : {
+        "container" : {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType" : "fdn/components/container",
+            "login" : {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType" : "cms/components/admin/login"
+            }
+        }
+    }
+}

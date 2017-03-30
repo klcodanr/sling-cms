@@ -1,0 +1,6 @@
+{
+	"jcr:primaryType": "cms:component",
+	"jcr:title": "Rich Text Editor",
+	"componentType": "General",
+	"resourceType": "fdn/components/richtext"
+}

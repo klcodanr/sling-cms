@@ -1,0 +1,40 @@
+{
+    "jcr:primaryType": "cms:page",
+    "sling:resourceType" : "cms/pages/adminSecurePage",
+    "title" : "Create Folder",
+    "jcr:content" : {
+        "container" : {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType" : "fdn/components/container",
+            "createfolderform": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType" : "cms/components/fields/slingform",
+				"button": "Create Folder",
+				"actionSuffix": "/*",
+				"fields": {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType" : "fdn/components/container",
+					"title": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "cms/components/fields/textfield",
+						"label": "Folder Title",
+						"name": "jcr:content/jcr:title"
+					},
+					"name": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "cms/components/fields/textfield",
+						"label": "Folder Name",
+						"name": ":name",
+						"required": true
+					},
+					"primaryType": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "cms/components/fields/hiddenfield",
+						"name": "jcr:primaryType",
+						"value": "sling:OrderedFolder"
+					}
+				}
+			}
+        }
+    }
+}

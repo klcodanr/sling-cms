@@ -1,0 +1,39 @@
+//  You can find out more documentation on this topic 
+//  by following these links:
+//
+//	-  http://sling.apache.org/site/content-loading.html
+//	-  http://jackrabbit.apache.org/node-type-notation.html
+
+<cms = 'http://www.sling.apache.org/cms/1.0'>
+
+
+[cms:site] > nt:hierarchyNode
+	orderable
+	- name (string)
+	- description (string)
+	- cms:created (date)
+	- cms:createdBy (string)
+	- jcr:lastModified (date)
+	- jcr:lastModifiedBy (string)
+	+ config (nt:base) = nt:unstructured copy primary
+	+ * (nt:base) = nt:base version
+
+[cms:page] > nt:unstructured
+	orderable
+	- published (boolean)
+	+ jcr:content (nt:base) = nt:unstructured copy primary
+	+ * (nt:base) = nt:base version
+	
+[cms:clientlib] > nt:hierarchyNode
+	orderable
+	- title (string)
+	- cms:created (date)
+	- cms:createdBy (string)
+	- jcr:lastModified (date)
+	- jcr:lastModifiedBy (string)
+	- css (string) multiple
+	- js (string) multiple
+
+[cms:template] > nt:hierarchyNode
+
+[cms:component] > nt:unstructured

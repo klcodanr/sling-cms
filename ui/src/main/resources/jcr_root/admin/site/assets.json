@@ -1,0 +1,30 @@
+{
+	"jcr:primaryType": "cms:page",
+	"sling:resourceType" : "cms/pages/adminSecurePage",
+	"title" : "Assets",
+	"jcr:content" : {
+		"container" : {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType" : "fdn/components/container",
+			"assetlist" : {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType" : "cms/components/admin/assetlist",
+				"uploadform": {
+					"jcr:primaryType": "nt:unstructured",
+					"sling:resourceType" : "cms/components/fields/slingform",
+					"button": "Upload",
+					"fields": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType" : "fdn/components/container",
+						"file": {
+							"jcr:primaryType": "nt:unstructured",
+							"sling:resourceType" : "cms/components/fields/filefield",
+							"name": "file",
+							"required": true
+						}
+					}
+				}
+			}
+		}
+	}
+}
