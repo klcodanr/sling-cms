@@ -3,4 +3,5 @@
 <link rel="stylesheet" href="/admin/clientlibs/foundation/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="/admin/clientlibs/foundation/sb-admin-2/dist/css/sb-admin-2.css">
 <link rel="stylesheet" href="/admin/clientlibs/foundation/summernote/dist/summernote.css">
+<link rel="stylesheet" href="/admin/clientlibs/foundation/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 <link rel="stylesheet" href="/admin/clientlibs/admin/css/admin.css">
