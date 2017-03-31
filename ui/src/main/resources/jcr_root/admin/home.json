@@ -1,8 +1,9 @@
 {
 	"jcr:primaryType": "cms:page",
-	"sling:resourceType": "cms/pages/adminSecurePage",
-	"title": "Welcome",
 	"jcr:content": {
+		"sling:resourceType": "cms/pages/adminSecurePage",
+		"jcr:title": "Welcome",
+		"jcr:primaryType": "nt:unstructured",
 		"sling:vanityPath": "/admin",
 		"sling:redirect": true,
 		"container": {

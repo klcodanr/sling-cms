@@ -1,0 +1,7 @@
+{
+	"jcr:primaryType": "cms:component",
+	"jcr:title": "Content Page",
+	"sling:resourceSuperType": "reference/components/pages/base",
+	"componentType": "Page",
+	"resourceType": "reference/components/pages/content"
+}

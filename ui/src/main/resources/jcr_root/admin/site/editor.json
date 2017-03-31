@@ -1,19 +1,20 @@
 {
-    "jcr:primaryType": "cms:page",
-    "sling:resourceType" : "cms/pages/editorpage",
-    "title" : "Page Editor",
-    "jcr:content" : {
-        "container" : {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType" : "fdn/components/container",
-            "editbar" : {
-                "jcr:primaryType": "nt:unstructured",
-                "sling:resourceType" : "cms/components/editor/pageeditbar"
-            },
-            "pageedit" : {
-                "jcr:primaryType": "nt:unstructured",
-                "sling:resourceType" : "cms/components/editor/pageeditcontainer"
-            }
-        }
-    }
+	"jcr:primaryType": "cms:page",
+	"jcr:content": {
+		"sling:resourceType": "cms/pages/editorpage",
+		"jcr:title": "Page Editor",
+		"jcr:primaryType": "nt:unstructured",
+		"container": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "fdn/components/container",
+			"editbar": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/editor/pageeditbar"
+			},
+			"pageedit": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/editor/pageeditcontainer"
+			}
+		}
+	}
 }

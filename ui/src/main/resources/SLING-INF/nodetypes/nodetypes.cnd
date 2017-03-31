@@ -23,17 +23,5 @@
 	- published (boolean)
 	+ jcr:content (nt:base) = nt:unstructured copy primary
 	+ * (nt:base) = nt:base version
-	
-[cms:clientlib] > nt:hierarchyNode
-	orderable
-	- title (string)
-	- cms:created (date)
-	- cms:createdBy (string)
-	- jcr:lastModified (date)
-	- jcr:lastModifiedBy (string)
-	- css (string) multiple
-	- js (string) multiple
-
-[cms:template] > nt:hierarchyNode
 
 [cms:component] > nt:unstructured

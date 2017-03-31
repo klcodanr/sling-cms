@@ -10,6 +10,10 @@ if(!window.CMSEditor){
 			$(".cms--edit-button[data-cms-action=edit]").click(function(){
 				CMSEditor.ui.showModal('/admin/editor/edit.html'+$(this).attr('data-cms-path'));
 			});
+
+			$(".cms--edit-button[data-cms-action=editpage]").click(function(){
+				CMSEditor.ui.showModal('/admin/editor/edit.html'+$(this).attr('data-cms-path'));
+			});
 			$(".cms--edit-button[data-cms-action=moveup]").click(function(){
 				CMSEditor.ui.showModal('/admin/editor/moveup.html'+$(this).attr('data-cms-path'));
 			});

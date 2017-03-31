@@ -22,11 +22,6 @@ public class CMSConstants {
 	public static final String ADMIN_PATH = "/admin";
 
 	/**
-	 * Admin path.
-	 */
-	public static final String ADMIN_SITES_PATH = ADMIN_PATH + "/sites";
-
-	/**
 	 * Assets path.
 	 */
 	public static final String ASSET_PATH = CONTENT_PATH + "/assets";

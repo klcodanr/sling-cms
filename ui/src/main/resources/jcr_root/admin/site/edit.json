@@ -1,15 +1,16 @@
 {
-    "jcr:primaryType": "cms:page",
-    "sling:resourceType" : "cms/pages/adminSecurePage",
-    "title" : "Edit Site",
-    "jcr:content" : {
-        "container" : {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType" : "fdn/components/container",
-            "siteEdit" : {
-                "jcr:primaryType": "nt:unstructured",
-                "sling:resourceType" : "cms/components/admin/siteEdit"
-            }
-        }
-    }
+	"jcr:primaryType": "cms:page",
+	"jcr:content": {
+		"sling:resourceType": "cms/pages/adminSecurePage",
+		"jcr:title": "Edit Site",
+		"jcr:primaryType": "nt:unstructured",
+		"container": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "fdn/components/container",
+			"siteEdit": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/admin/siteEdit"
+			}
+		}
+	}
 }

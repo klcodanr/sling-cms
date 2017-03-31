@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
-						<c:out value="${properties.title}" default="${properties['jcr:title']}" />
+						<sling:encode value="${properties['jcr:title']}" mode="HTML" />
 					</h1>
 				</div>
 			</div>
@@ -16,7 +16,7 @@
 					<c:out value="${ra.messageText}" />
 				</div>
 			</c:if>
-			<sling:include path="jcr:content/container" />
+			<sling:include path="container" />
 		</div>
 	</div>
 	<sling:call script="scripts.jsp" />

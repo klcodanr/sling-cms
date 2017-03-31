@@ -1,35 +1,36 @@
 {
 	"jcr:primaryType": "cms:page",
-	"sling:resourceType" : "cms/pages/adminSecurePage",
-	"title" : "Site Config",
-	"jcr:content" : {
-		"container" : {
+	"jcr:content": {
+		"sling:resourceType": "cms/pages/adminSecurePage",
+		"jcr:title": "Site Config",
+		"jcr:primaryType": "nt:unstructured",
+		"container": {
 			"jcr:primaryType": "nt:unstructured",
-			"sling:resourceType" : "fdn/components/container",
-			"siteconfig" : {
+			"sling:resourceType": "fdn/components/container",
+			"siteconfig": {
 				"jcr:primaryType": "nt:unstructured",
-				"sling:resourceType" : "cms/components/fields/slingform",
+				"sling:resourceType": "cms/components/fields/slingform",
 				"button": "Update Configuration",
 				"fields": {
 					"jcr:primaryType": "nt:unstructured",
-					"sling:resourceType" : "fdn/components/container",
-					"assetEditor" : {
+					"sling:resourceType": "fdn/components/container",
+					"assetEditor": {
 						"jcr:primaryType": "nt:unstructured",
-						"sling:resourceType" : "cms/components/fields/pathfield",
-						"basePath":"/apps",
-						"label":"Asset Editor",
-						"name":"assetEditor"
+						"sling:resourceType": "cms/components/fields/pathfield",
+						"basePath": "/apps",
+						"label": "Asset Editor",
+						"name": "assetEditor"
 					},
-					"blogpanel" : {
+					"blogpanel": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/panel",
 						"title": "Blog Configuration",
 						"collapse": false,
-						"blogEnabled" : {
+						"blogEnabled": {
 							"jcr:primaryType": "nt:unstructured",
-							"sling:resourceType" : "cms/components/fields/selectfield",
-							"label":"Blog Enabled",
-							"name":"blogEnabled",
+							"sling:resourceType": "cms/components/fields/selectfield",
+							"label": "Blog Enabled",
+							"name": "blogEnabled",
 							"options": {
 								"jcr:primaryType": "nt:unstructured",
 								"yes": {
@@ -42,54 +43,52 @@
 								}
 							}
 						},
-						"blogEnabledTypeHint" : {
+						"blogEnabledTypeHint": {
 							"jcr:primaryType": "nt:unstructured",
-							"sling:resourceType" : "cms/components/fields/hiddenfield",
-							"name":"blogEnabled@TypeHint",
+							"sling:resourceType": "cms/components/fields/hiddenfield",
+							"name": "blogEnabled@TypeHint",
 							"value": "Boolean"
-						 },
-						"blogType" : {
+						},
+						"blogType": {
 							"jcr:primaryType": "nt:unstructured",
-							"sling:resourceType" : "cms/components/fields/datalist",
-							"label":"Post Resource Type",
+							"sling:resourceType": "cms/components/fields/datalist",
+							"label": "Post Resource Type",
 							"query": "SELECT * FROM [cms:component] WHERE [componentType]='Page'",
 							"queryLanguage": "JCR-SQL2",
 							"labelProperty": "jcr:title",
 							"valueProperty": "resourceType",
-							"name":"blogType"
+							"name": "blogType"
 						}
 					},
-					
-					"fragmentpanel" : {
+					"fragmentpanel": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/panel",
 						"title": "Fragment Configuration",
 						"collapse": false,
-						"fragmentType" : {
+						"fragmentType": {
 							"jcr:primaryType": "nt:unstructured",
-							"sling:resourceType" : "cms/components/fields/datalist",
-							"label":"Fragment Resource Type",
+							"sling:resourceType": "cms/components/fields/datalist",
+							"label": "Fragment Resource Type",
 							"query": "SELECT * FROM [cms:component] WHERE [componentType]='Page'",
 							"queryLanguage": "JCR-SQL2",
 							"labelProperty": "jcr:title",
 							"valueProperty": "resourceType",
-							"name":"fragmentType"
+							"name": "fragmentType"
 						}
 					}
-					
 				}
 			},
-			"pagepanel" : {
+			"pagepanel": {
 				"jcr:primaryType": "nt:unstructured",
 				"sling:resourceType": "cms/components/fields/panel",
 				"title": "Page Configuration",
-				"collapse": true,
-				"pagetypesHeader" : {
+				"collapse": false,
+				"pagetypesHeader": {
 					"jcr:primaryType": "nt:unstructured",
 					"sling:resourceType": "fdn/components/richtext",
 					"text": "<h2>Page Types</h2>"
 				},
-				"pagetypes" : {
+				"pagetypes": {
 					"jcr:primaryType": "nt:unstructured",
 					"sling:resourceType": "cms/components/editor/editcontainer",
 					"availableTypes": "cms/components/editor/pagetype",

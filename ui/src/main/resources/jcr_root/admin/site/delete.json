@@ -1,31 +1,32 @@
 {
-    "jcr:primaryType": "cms:page",
-    "sling:resourceType" : "cms/pages/adminSecurePage",
-    "title" : "Delete",
-    "jcr:content" : {
-        "container" : {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType" : "fdn/components/container",
-            "deleteform": {
+	"jcr:primaryType": "cms:page",
+	"jcr:content": {
+		"sling:resourceType": "cms/pages/adminSecurePage",
+		"jcr:title": "Delete",
+		"jcr:primaryType": "nt:unstructured",
+		"container": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "fdn/components/container",
+			"deleteform": {
 				"jcr:primaryType": "nt:unstructured",
-				"sling:resourceType" : "cms/components/fields/slingform",
+				"sling:resourceType": "cms/components/fields/slingform",
 				"button": "Delete Content",
 				"fields": {
 					"jcr:primaryType": "nt:unstructured",
-					"sling:resourceType" : "fdn/components/container",
+					"sling:resourceType": "fdn/components/container",
 					"path": {
 						"jcr:primaryType": "nt:unstructured",
-						"sling:resourceType" : "cms/components/fields/suffixlabel",
+						"sling:resourceType": "cms/components/fields/suffixlabel",
 						"label": "Do you want to delete:"
 					},
 					"primaryType": {
 						"jcr:primaryType": "nt:unstructured",
-						"sling:resourceType" : "cms/components/fields/hiddenfield",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
 						"name": ":operation",
 						"value": "delete"
 					}
 				}
 			}
-        }
-    }
+		}
+	}
 }

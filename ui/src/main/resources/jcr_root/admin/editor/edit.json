@@ -1,8 +1,9 @@
 {
 	"jcr:primaryType": "cms:page",
-	"sling:resourceType": "cms/pages/editpage",
-	"title": "Edit",
 	"jcr:content": {
+		"jcr:primaryType": "nt:unstructured",
+		"jcr:title": "Edit",
+		"sling:resourceType" : "cms/pages/editpage",
 		"container": {
 			"jcr:primaryType": "nt:unstructured",
 			"sling:resourceType": "fdn/components/container",

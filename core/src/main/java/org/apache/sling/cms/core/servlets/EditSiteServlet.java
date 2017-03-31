@@ -19,6 +19,7 @@ import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.cms.CMSConstants;
 import org.apache.sling.cms.core.models.RedirectAttribute;
 import org.apache.sling.cms.core.models.Site;
+import org.apache.sling.jcr.resource.JcrResourceConstants;
 import org.apache.sling.cms.core.models.RedirectAttribute.LEVEL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,24 +64,33 @@ public class EditSiteServlet extends SlingAllMethodsServlet {
 				siteProperties.put(JcrConstants.JCR_PRIMARYTYPE, CMSConstants.NODE_TYPE_SITE);
 				siteProperties.put(Site.PN_NAME, name);
 				siteProperties.put(Site.PN_DESCRIPTION, description);
-				siteProperties.put(Site.PN_NAME, name);
-				siteProperties.put(Site.PN_DESCRIPTION, description);
 				Resource siteResource = resolver.create(contentRoot, id, siteProperties);
-				
+
 				Resource configs = resolver.getResource("/etc/config");
-				if(configs == null){
+				if (configs == null) {
 					Resource etc = resolver.getResource("/etc");
 					Map<String, Object> configsProperties = new HashMap<String, Object>();
-					configsProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_FOLDER);
+					configsProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_UNSTRUCTURED);
 					configs = resolver.create(etc, "config", configsProperties);
 				}
 
 				Map<String, Object> siteConfigProperties = new HashMap<String, Object>();
-				siteProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_UNSTRUCTURED);
+				siteConfigProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_UNSTRUCTURED);
 				resolver.create(configs, id, siteConfigProperties);
-				
+
+				Resource fragments = resolver.getResource("/etc/fragments");
+				if (fragments == null) {
+					Resource etc = resolver.getResource("/etc");
+					Map<String, Object> fragmentsProperties = new HashMap<String, Object>();
+					fragmentsProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_FOLDER);
+					fragments = resolver.create(etc, "fragments", fragmentsProperties);
+				}
+				Map<String, Object> siteFragments = new HashMap<String, Object>();
+				siteFragments.put(JcrConstants.JCR_PRIMARYTYPE, JcrResourceConstants.NT_SLING_ORDERED_FOLDER);
+				resolver.create(fragments, id, siteFragments);
+
 				Map<String, Object> assetsFolderProperties = new HashMap<String, Object>();
-				assetsFolderProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrConstants.NT_UNSTRUCTURED);
+				assetsFolderProperties.put(JcrConstants.JCR_PRIMARYTYPE, JcrResourceConstants.NT_SLING_ORDERED_FOLDER);
 				resolver.create(siteResource, "assets", assetsFolderProperties);
 
 				RedirectAttribute.setMessage(request, LEVEL.success, "Site created successfully!");
@@ -96,7 +106,7 @@ public class EditSiteServlet extends SlingAllMethodsServlet {
 			resolver.commit();
 			resolver.close();
 
-			response.sendRedirect(CMSConstants.ADMIN_SITES_PATH + ".html");
+			response.sendRedirect(CMSConstants.ADMIN_PATH);
 		} catch (PersistenceException e) {
 			RedirectAttribute.setMessage(request, LEVEL.danger, "Failed to update site!");
 			log.error("Could not edit site", e);
