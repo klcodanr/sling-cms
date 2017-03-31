@@ -72,6 +72,14 @@ CMS.ext['fetch-modal'] = {
 	}
 }
 
+CMS.ext['richtext'] = {
+	decorate: function($ctx){
+		$ctx.find('.richtext').summernote({
+		    height: 200
+		});
+	}
+}
+
 CMS.ext['slingform'] = {
 	decorate: function($ctx){
 		$ctx.find('.slingform').submit(function(){
