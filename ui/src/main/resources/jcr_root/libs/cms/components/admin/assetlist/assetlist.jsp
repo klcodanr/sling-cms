@@ -66,7 +66,7 @@
 						</c:otherwise>
 					</c:choose>
 					<span class="caption">${asset.name}</span><br/>
-					<a class="btn btn-xs btn-default fetch-html-modal" data-title="Edit Asset" title="Edit Asset" data-path="form" target="_blank" href="${site.configProperties.assetEditor}.html${asset.path}">
+					<a class="btn btn-xs btn-default fetch-html-modal" data-title="Edit Asset" title="Edit Asset" data-path="form" target="_blank" href="${site.configProperties.assetEditor}.html${asset.path}/jcr:content">
 						<i class="fa fa-pencil" aria-hidden="true"><span class="sr-only">Edit</span></i>
 					</a>
 					<a class="btn btn-xs btn-default" title="View Asset" target="_blank" href="${asset.path}">
