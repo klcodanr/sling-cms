@@ -1,6 +1,6 @@
 {
 	"jcr:primaryType": "cms:module",
-	"basePath": "/etc/fra/{site.id}",
+	"basePath": "/etc/fragments/{site.id}",
 	"configurationResourceType": "cms/components/config/fragments",
 	"console": "/admin/site/fragments.html",
 	"context": "site",
