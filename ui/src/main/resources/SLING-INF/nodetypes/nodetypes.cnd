@@ -25,3 +25,13 @@
 	+ * (nt:base) = nt:base version
 
 [cms:component] > nt:unstructured
+
+[cms:module] > nt:unstructured
+	- basePath (string)
+	- configurationResourceType (string)
+	- console (string)
+	- context (string)
+	- icon (string)
+	- moduleName (string)
+	- order (long)
+	- title (string)

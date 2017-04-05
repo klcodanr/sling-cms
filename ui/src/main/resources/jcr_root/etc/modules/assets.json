@@ -1,0 +1,11 @@
+{
+	"jcr:primaryType": "cms:module",
+	"basePath": "/content/{site.id}/assets",
+	"configurationResourceType": "cms/components/config/assets",
+	"console": "/admin/site/assets.html",
+	"context": "site",
+	"icon": "fa-image",
+	"moduleName": "assets",
+	"order": 20,
+	"title": "Assets"
+}

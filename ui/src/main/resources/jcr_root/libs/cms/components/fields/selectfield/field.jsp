@@ -1,5 +1,8 @@
 <%@include file="/libs/cms/global.jsp"%>
-<select class="form-control" name="${properties.name}" ${required} ${disabled}>
+<c:if test="${properties.multiple == true}">
+	<c:set var="multiple" value="multiple = \"multiple\"" />
+</c:if>
+<select class="form-control" name="${properties.name}" ${required} ${disabled} ${multiple}>
 	<c:set var="optionsPath" value="${resource.path}/options" />
 	<c:choose>
 		<c:when test="${sling:getResource(resourceResolver,optionsPath) != null}">

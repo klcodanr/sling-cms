@@ -24,18 +24,20 @@ public class Page extends AbstractContentModel {
 	public Boolean getPublished() {
 		return published;
 	}
-	
+
 	public String getAvailableComponents() {
 		Resource config = resource.adaptTo(SiteManager.class).getSite().getConfig();
 		List<String> types = new ArrayList<String>();
-		for (Resource pageType : config.getChild("jcr:content/pagetypes").getChildren()) {
-			if(getContentResource().getResourceType().equals(pageType.getValueMap().get("resourceType", String.class))){
-				for (Resource type : pageType.getChild("availabletypes").getChildren()) {
-					types.add(type.getValueMap().get("resourceType", String.class));
+		if (config != null && config.getChild("pagetypes") != null) {
+			for (Resource pageType : config.getChild("pagetypes").getChildren()) {
+				if (getContentResource().getResourceType()
+						.equals(pageType.getValueMap().get("resourceType", String.class))) {
+					for (Resource type : pageType.getChild("availabletypes").getChildren()) {
+						types.add(type.getValueMap().get("resourceType", String.class));
+					}
 				}
 			}
 		}
 		return StringUtils.join(types, ",");
-
 	}
 }

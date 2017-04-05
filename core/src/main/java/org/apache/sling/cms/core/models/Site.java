@@ -1,13 +1,11 @@
 package org.apache.sling.cms.core.models;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
@@ -44,6 +42,22 @@ public class Site {
 		return description;
 	}
 
+	public List<Module> getEnabledModules() {
+		String[] enabledModulePaths = getConfigProperties().get("enabledModules", String[].class);
+		List<Module> enabledModules = new ArrayList<Module>();
+		for (String path : enabledModulePaths) {
+			Resource mod = resource.getResourceResolver().getResource(path);
+			if (mod != null) {
+				Module module = mod.adaptTo(Module.class);
+				if (module != null && "site".equals(module.getContext())) {
+					enabledModules.add(mod.adaptTo(Module.class));
+				}
+			}
+		}
+		Collections.sort(enabledModules, Module.MODULE_COMPARATOR);
+		return enabledModules;
+	}
+
 	public String getId() {
 		return resource.getName();
 	}
@@ -59,6 +73,5 @@ public class Site {
 	public Resource getResource() {
 		return resource;
 	}
-
 
 }

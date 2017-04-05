@@ -6,7 +6,7 @@
         <groupId>org.apache.sling.cms</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>ui</artifactId>
+    <artifactId>org.apache.sling.cms.ui</artifactId>
     <packaging>bundle</packaging>
     <name>Sling CMS - UI</name>
     <build>
@@ -22,6 +22,7 @@
                         <Sling-Initial-Content>
                             jcr_root/libs;overwrite:=true;uninstall:=true;path:=/libs,
                             jcr_root/etc/config;overwrite:=false;uninstall:=false;path:=/etc/config,
+                            jcr_root/etc/modules;overwrite:=false;uninstall:=false;path:=/etc/modules,
                             jcr_root/etc/fragments;overwrite:=false;uninstall:=false;path:=/etc/fragments,
                             jcr_root/admin;overwrite:=true;uninstall:=true;path:=/admin
                         </Sling-Initial-Content>

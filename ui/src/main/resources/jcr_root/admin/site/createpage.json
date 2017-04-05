@@ -19,7 +19,7 @@
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/textfield",
 						"label": "Page Title",
-						"name": "title",
+						"name": "jcr:content/jcr:title",
 						"required": true
 					},
 					"name": {
@@ -33,14 +33,14 @@
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/selectfield",
 						"label": "Page Type",
-						"name": "sling:resourceType",
+						"name": "jcr:content/sling:resourceType",
 						"optionsScript": "/libs/cms/components/editor/scripts/pagetypes.jsp",
 						"required": true
 					},
 					"published": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/hiddenfield",
-						"name": "published",
+						"name": "jcr:content/published",
 						"value": "false"
 					},
 					"publishedTypeHint": {
@@ -58,25 +58,25 @@
 					"created": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/hiddenfield",
-						"name": "jcr:created",
+						"name": "jcr:content/jcr:created",
 						"value": ""
 					},
 					"createdBy": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/hiddenfield",
-						"name": "jcr:createdBy",
+						"name": "jcr:content/jcr:createdBy",
 						"value": ""
 					},
 					"lastModified": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/hiddenfield",
-						"name": "jcr:lastModified",
+						"name": "jcr:content/jcr:lastModified",
 						"value": ""
 					},
 					"lastModifiedBy": {
 						"jcr:primaryType": "nt:unstructured",
 						"sling:resourceType": "cms/components/fields/hiddenfield",
-						"name": "jcr:lastModifiedBy",
+						"name": "jcr:content/jcr:lastModifiedBy",
 						"value": "lastModifiedBy"
 					}
 				}

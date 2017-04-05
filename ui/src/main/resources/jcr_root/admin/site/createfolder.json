@@ -33,6 +33,36 @@
 						"sling:resourceType": "cms/components/fields/hiddenfield",
 						"name": "jcr:primaryType",
 						"value": "sling:OrderedFolder"
+					},
+					"contentPrimaryType": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
+						"name": "jcr:content/jcr:primaryType",
+						"value": "nt:unstructured"
+					},
+					"created": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
+						"name": "jcr:content/jcr:created",
+						"value": ""
+					},
+					"createdBy": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
+						"name": "jcr:content/jcr:createdBy",
+						"value": ""
+					},
+					"lastModified": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
+						"name": "jcr:content/jcr:lastModified",
+						"value": ""
+					},
+					"lastModifiedBy": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/hiddenfield",
+						"name": "jcr:content/jcr:lastModifiedBy",
+						"value": ""
 					}
 				}
 			}

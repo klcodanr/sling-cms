@@ -44,15 +44,11 @@
 						<li class="sidebar-link">
 							<a href="/admin/site/home.html${site.path}"><i class="fa fa-sitemap fa-fw"></i> <sling:encode value="${site.name}" mode="HTML" /></a>
 						</li>
-						<li class="sidebar-link">
-							<a href="/admin/site/content.html${site.path}"><i class="fa fa-list-alt fa-fw"></i> Content</a>
-						</li>
-						<li class="sidebar-link">
-							<a href="/admin/site/assets.html${site.path}/assets"><i class="fa fa-image fa-fw"></i> Assets</a>
-						</li>
-						<li class="sidebar-link">
-							<a href="/admin/site/fragments.html/etc/fragments/${site.id}"><i class="fa fa-th fa-fw"></i> Fragments</a>
-						</li>
+						<c:forEach var="module" items="${site.enabledModules}">
+							<li class="sidebar-link">
+								<a href="${module.console}${fn:replace(module.basePath,site.id)}"><i class="fa ${module.icon} fa-fw"></i> ${module.title}</a>
+							</li>
+						</c:forEach>
 						<li class="sidebar-link">
 							<a href="/admin/site/config.html${site.config.path}"><i class="fa fa-gear fa-fw"></i> Site Config</a>
 						</li>

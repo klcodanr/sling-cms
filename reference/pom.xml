@@ -6,7 +6,7 @@
         <groupId>org.apache.sling.cms</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>reference</artifactId>
+    <artifactId>org.apache.sling.cms.reference</artifactId>
     <packaging>bundle</packaging>
     <name>Sling CMS - Reference</name>
     <build>

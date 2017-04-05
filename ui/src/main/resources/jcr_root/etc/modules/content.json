@@ -1,0 +1,11 @@
+{
+	"jcr:primaryType": "cms:module",
+	"basePath": "/content/{site.id}",
+	"configurationResourceType": "cms/components/config/content",
+	"console": "/admin/site/content.html",
+	"context": "site",
+	"icon": "fa-list-alt",
+	"moduleName": "content",
+	"order":10,
+	"title": "Content"
+}
