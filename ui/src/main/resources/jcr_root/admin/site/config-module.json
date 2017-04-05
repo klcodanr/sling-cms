@@ -1,0 +1,16 @@
+{
+	"jcr:primaryType": "cms:page",
+	"jcr:content": {
+		"sling:resourceType": "cms/pages/adminSecurePage",
+		"jcr:title": "Site Config",
+		"jcr:primaryType": "nt:unstructured",
+		"container": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "fdn/components/container",
+			"moduleconfiguration": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/admin/moduleconfiguration"
+			}
+		}
+	}
+}

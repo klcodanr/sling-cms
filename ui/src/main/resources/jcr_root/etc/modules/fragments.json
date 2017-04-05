@@ -4,8 +4,10 @@
 	"configurationResourceType": "cms/components/config/fragments",
 	"console": "/admin/site/fragments.html",
 	"context": "site",
+	"description": "Built in module for managing content not directly published on the website",
 	"icon": "fa-th",
 	"moduleName": "fragments",
 	"order":40,
-	"title": "Fragments"
+	"title": "Fragments",
+	"version": "1.0.0"
 }

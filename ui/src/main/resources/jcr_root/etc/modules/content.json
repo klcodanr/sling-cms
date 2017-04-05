@@ -4,8 +4,10 @@
 	"configurationResourceType": "cms/components/config/content",
 	"console": "/admin/site/content.html",
 	"context": "site",
+	"description": "Built in module for managing site content",
 	"icon": "fa-list-alt",
 	"moduleName": "content",
 	"order":10,
-	"title": "Content"
+	"title": "Content",
+	"version": "1.0.0"
 }

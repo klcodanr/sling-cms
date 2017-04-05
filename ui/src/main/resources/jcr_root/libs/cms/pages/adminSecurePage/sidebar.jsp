@@ -46,7 +46,7 @@
 						</li>
 						<c:forEach var="module" items="${site.enabledModules}">
 							<li class="sidebar-link">
-								<a href="${module.console}${fn:replace(module.basePath,site.id)}"><i class="fa ${module.icon} fa-fw"></i> ${module.title}</a>
+								<a href="${module.console}${fn:replace(module.basePath,'{site.id}',site.id)}"><i class="fa ${module.icon} fa-fw"></i> ${module.title}</a>
 							</li>
 						</c:forEach>
 						<li class="sidebar-link">

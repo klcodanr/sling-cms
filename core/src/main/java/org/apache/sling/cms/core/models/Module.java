@@ -13,7 +13,7 @@ public interface Module {
 	public static final Comparator<Module> MODULE_COMPARATOR = new Comparator<Module>() {
 		@Override
 		public int compare(Module o1, Module o2) {
-			return o1.getOrder().compareTo(o2.getOrder()) * -1;
+			return o1.getOrder().compareTo(o2.getOrder());
 		}
 	};
 
@@ -30,14 +30,20 @@ public interface Module {
 	String getContext();
 
 	@Inject
+	String getDescription();
+
+	@Inject
 	String getIcon();
 
 	@Inject
 	String getModuleName();
 
 	@Inject
+	Long getOrder();
+
+	@Inject
 	String getTitle();
 
 	@Inject
-	Long getOrder();
+	String getVersion();
 }

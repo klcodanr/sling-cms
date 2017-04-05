@@ -16,13 +16,16 @@
 					"sling:resourceType": "fdn/components/container",
 					"enabledModules": {
 						"jcr:primaryType": "nt:unstructured",
-						"sling:resourceType": "cms/components/fields/selectfield",
-						"multiple": true,
-						"label": "Enabled Modules",
+						"sling:resourceType": "cms/components/fields/checkboxes",
+						"label": "Available Modules",
 						"name": "enabledModules",
 						"optionsScript": "/libs/cms/components/editor/scripts/moduleOptions.jsp"
 					}
 				}
+			},
+			"moduleconfigurations": {
+				"jcr:primaryType": "nt:unstructured",
+				"sling:resourceType": "cms/components/admin/moduleconfigurations"
 			}
 		}
 	}

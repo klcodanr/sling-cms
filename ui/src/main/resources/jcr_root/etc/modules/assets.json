@@ -4,8 +4,10 @@
 	"configurationResourceType": "cms/components/config/assets",
 	"console": "/admin/site/assets.html",
 	"context": "site",
+	"description": "Built in module for uploading and storing Digital Assets including images, videos and audio",
 	"icon": "fa-image",
 	"moduleName": "assets",
 	"order": 20,
-	"title": "Assets"
+	"title": "Assets",
+	"version": "1.0.0"
 }

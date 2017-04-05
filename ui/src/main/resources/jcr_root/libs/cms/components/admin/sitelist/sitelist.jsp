@@ -1,6 +1,5 @@
 <%@include file="/libs/cms/global.jsp"%>
 <sling:adaptTo var="sites" adaptable="${sling:getResource(resourceResolver,'/content')}" adaptTo="org.apache.sling.cms.core.models.SiteList" />
-${}
 <div class="site-controller">
 	<div class="row">
 		<div class="col-xs-12">

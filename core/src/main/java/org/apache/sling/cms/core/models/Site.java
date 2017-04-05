@@ -45,12 +45,14 @@ public class Site {
 	public List<Module> getEnabledModules() {
 		String[] enabledModulePaths = getConfigProperties().get("enabledModules", String[].class);
 		List<Module> enabledModules = new ArrayList<Module>();
-		for (String path : enabledModulePaths) {
-			Resource mod = resource.getResourceResolver().getResource(path);
-			if (mod != null) {
-				Module module = mod.adaptTo(Module.class);
-				if (module != null && "site".equals(module.getContext())) {
-					enabledModules.add(mod.adaptTo(Module.class));
+		if (enabledModulePaths != null) {
+			for (String path : enabledModulePaths) {
+				Resource mod = resource.getResourceResolver().getResource(path);
+				if (mod != null) {
+					Module module = mod.adaptTo(Module.class);
+					if (module != null && "site".equals(module.getContext())) {
+						enabledModules.add(mod.adaptTo(Module.class));
+					}
 				}
 			}
 		}
