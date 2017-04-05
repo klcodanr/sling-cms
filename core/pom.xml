@@ -30,6 +30,13 @@
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
 				<version>2.4.0</version>
+				<configuration>
+					<instructions>
+						<Sling-Model-Packages>
+							org.apache.sling.cms.core.models
+						</Sling-Model-Packages>
+					</instructions>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -69,19 +76,6 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.felix</groupId>
-						<artifactId>maven-bundle-plugin</artifactId>
-						<extensions>true</extensions>
-						<version>2.0.1</version>
-						<configuration>
-							<instructions>
-								<Sling-Model-Packages>
-									org.apache.sling.cms.core.models
-								</Sling-Model-Packages>
-							</instructions>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
