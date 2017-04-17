@@ -28,8 +28,8 @@ public class Page extends AbstractContentModel {
 	public String getAvailableComponents() {
 		Resource config = resource.adaptTo(SiteManager.class).getSite().getConfig();
 		List<String> types = new ArrayList<String>();
-		if (config != null && config.getChild("pagetypes") != null) {
-			for (Resource pageType : config.getChild("pagetypes").getChildren()) {
+		if (config != null && config.getChild("content/pagetypes") != null) {
+			for (Resource pageType : config.getChild("content/pagetypes").getChildren()) {
 				if (getContentResource().getResourceType()
 						.equals(pageType.getValueMap().get("resourceType", String.class))) {
 					for (Resource type : pageType.getChild("availabletypes").getChildren()) {

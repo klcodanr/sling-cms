@@ -1,2 +1,2 @@
 <%@include file="/libs/cms/global.jsp"%>
-<input type="hidden" name="${properties.name}" value="${site.configProperties.fragmentType}" />
+<input type="hidden" name="${properties.name}" value="${sling:getRelativeResource(site.config,'fragments').valueMap.resourceType}" />

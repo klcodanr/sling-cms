@@ -2,6 +2,7 @@ package org.apache.sling.cms.core.filters;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -37,6 +38,22 @@ public class EditIncludeFilter implements Filter {
 		boolean enabled = "true".equals(request.getAttribute(ENABLED_ATTR_NAME));
 		String editPath = getEditPath(resource);
 		PrintWriter writer = null;
+
+		boolean last = false;
+		boolean first = false;
+		Iterator<Resource> children = resource.getParent().listChildren();
+		if (children.next().equals(resource)) {
+			first = true;
+		}
+		if (children.hasNext()) {
+			while (children.hasNext()) {
+				if (children.next().equals(resource) && !children.hasNext()) {
+					last = true;
+				}
+			}
+		} else {
+			last = true;
+		}
 		if (enabled && StringUtils.isNotEmpty(editPath)) {
 			writer = response.getWriter();
 			writer.write("<div class=\"cms--component\" data-cms-resource-path=\"" + resource.getPath()
@@ -45,10 +62,14 @@ public class EditIncludeFilter implements Filter {
 			writer.write("<div class=\"cms--edit-bar\">");
 			writer.write("<button class=\"cms--edit-button\" data-cms-action=\"edit\" data-cms-path=\""
 					+ resource.getPath() + "\" data-cms-edit=\"" + editPath + "\">Edit</button>");
-			writer.write("<button class=\"cms--edit-button\" data-cms-action=\"moveup\" data-cms-path=\""
-					+ resource.getPath() + "\">Move Up</button>");
-			writer.write("<button class=\"cms--edit-button\" data-cms-action=\"movedown\" data-cms-path=\""
-					+ resource.getPath() + "\">Move Down</button>");
+			if (!first) {
+				writer.write("<button class=\"cms--edit-button\" data-cms-action=\"moveup\" data-cms-path=\""
+						+ resource.getPath() + "\">Move Up</button>");
+			}
+			if (!last) {
+				writer.write("<button class=\"cms--edit-button\" data-cms-action=\"movedown\" data-cms-path=\""
+						+ resource.getPath() + "\">Move Down</button>");
+			}
 			writer.write("<button class=\"cms--edit-button\" data-cms-action=\"delete\" data-cms-path=\""
 					+ resource.getPath() + "\">Delete</button>");
 			writer.write("</div>");

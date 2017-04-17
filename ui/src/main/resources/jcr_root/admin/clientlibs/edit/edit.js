@@ -17,6 +17,9 @@ if(!window.CMSEditor){
 			$(".cms--edit-button[data-cms-action=moveup]").click(function(){
 				CMSEditor.ui.showModal('/admin/editor/moveup.html'+$(this).attr('data-cms-path'));
 			});
+			$(".cms--edit-button[data-cms-action=movedown]").click(function(){
+				CMSEditor.ui.showModal('/admin/editor/movedown.html'+$(this).attr('data-cms-path'));
+			});
 			
 			// closing the modal
 			$(".cms--modal-close").click(function(){
