@@ -14,6 +14,7 @@ import javax.servlet.ServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.sling.SlingFilter;
 import org.apache.felix.scr.annotations.sling.SlingFilterScope;
+import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.cms.core.models.EditableResource;
@@ -42,12 +43,12 @@ public class EditIncludeFilter implements Filter {
 		boolean last = false;
 		boolean first = false;
 		Iterator<Resource> children = resource.getParent().listChildren();
-		if (children.next().equals(resource)) {
+		if (!children.hasNext() || children.next().getPath().equals(resource.getPath())) {
 			first = true;
 		}
 		if (children.hasNext()) {
 			while (children.hasNext()) {
-				if (children.next().equals(resource) && !children.hasNext()) {
+				if (children.next().getPath().equals(resource.getPath()) && !children.hasNext()) {
 					last = true;
 				}
 			}
@@ -70,8 +71,10 @@ public class EditIncludeFilter implements Filter {
 				writer.write("<button class=\"cms--edit-button\" data-cms-action=\"movedown\" data-cms-path=\""
 						+ resource.getPath() + "\">Move Down</button>");
 			}
-			writer.write("<button class=\"cms--edit-button\" data-cms-action=\"delete\" data-cms-path=\""
-					+ resource.getPath() + "\">Delete</button>");
+			if (!resource.getName().equals(JcrConstants.JCR_CONTENT)) {
+				writer.write("<button class=\"cms--edit-button\" data-cms-action=\"delete\" data-cms-path=\""
+						+ resource.getPath() + "\">Delete</button>");
+			}
 			writer.write("</div>");
 		}
 		chain.doFilter(request, response);

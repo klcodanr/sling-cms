@@ -11,5 +11,8 @@
 		<button class="cms--edit-button" data-cms-action="add" data-cms-path="${resource.path}" data-cms-available-types="${availableTypes}">
 			Add
 		</button>
+		<button class="cms--edit-button" data-cms-action="delete" data-cms-path="${resource.path}">
+			Delete
+		</button>
 	</div>
 </c:if>
