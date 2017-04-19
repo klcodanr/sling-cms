@@ -1,0 +1,13 @@
+{
+	"jcr:primaryType": "cms:module",
+	"basePath": "/content/{site.id}",
+	"configurationResourceType": "cms/components/config/blog",
+	"console": "/admin/site/blog.html",
+	"context": "site",
+	"description": "Built in module for managing blog content",
+	"icon": "fa-pencil-square-o",
+	"moduleName": "blog",
+	"order": 30,
+	"title": "Blog",
+	"version": "1.0.0"
+}

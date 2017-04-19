@@ -63,4 +63,9 @@ public class CMSConstants {
 
 	public static final String PARAM_RETURN = "return";
 	public static final String PARAM_PATH = "path";
+
+	/**
+	 * Subpath for the default blog configuration
+	 */
+	public static final String BLOG_CONFIG_SUBPATH = "blog";
 }

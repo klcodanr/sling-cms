@@ -12,6 +12,10 @@ import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class)
 public class Page extends AbstractContentModel {
+	
+	public static final Page getContainingPage(Resource resource){
+		return resource.adaptTo(PageManager.class).getPage();
+	}
 
 	@Inject
 	@Named("jcr:content/published")
@@ -19,10 +23,6 @@ public class Page extends AbstractContentModel {
 
 	public Page(Resource resource) {
 		this.resource = resource;
-	}
-
-	public Boolean getPublished() {
-		return published;
 	}
 
 	public String getAvailableComponents() {
@@ -39,5 +39,9 @@ public class Page extends AbstractContentModel {
 			}
 		}
 		return StringUtils.join(types, ",");
+	}
+
+	public Boolean getPublished() {
+		return published;
 	}
 }

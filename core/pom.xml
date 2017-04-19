@@ -10,12 +10,13 @@
 	<artifactId>org.apache.sling.cms.core</artifactId>
 	<packaging>bundle</packaging>
 	<name>Sling CMS Core</name>
+	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-scr-plugin</artifactId>
-				<version>1.16.0</version>
+				<version>1.24.0</version>
 				<executions>
 					<execution>
 						<id>generate-scr-descriptor</id>
@@ -43,8 +44,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>7</source>
-					<target>7</target>
+					<source>8</source>
+					<target>8</target>
 				</configuration>
 			</plugin>
 			<plugin>

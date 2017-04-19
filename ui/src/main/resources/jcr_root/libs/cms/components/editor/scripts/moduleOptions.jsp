@@ -7,11 +7,11 @@
 		</c:if>
 	</c:forEach>
 	<sling:adaptTo var="module" adaptable="${modr}" adaptTo="org.apache.sling.cms.core.models.Module" />
-	<label>
+	<label class="module-wrapper">
 		<input type="checkbox" name="${properties.name}" value="${modr.path}" ${checked} ${disabled} ${required} />
 		<strong><sling:encode value="${module.title}" mode="HTML" /></strong><br/>
-		<small class="modue-version"><em>${module.version}</em></small><br/>
-		<small class="modue-description">
+		<small class="module-version"><em>${module.version}</em></small><br/>
+		<small class="module-description">
 			<sling:encode value="${module.description}" mode="HTML" />
 		</small>
 	</label>

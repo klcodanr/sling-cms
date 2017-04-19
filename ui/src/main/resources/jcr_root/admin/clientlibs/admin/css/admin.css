@@ -58,6 +58,14 @@
 	padding: 5px 0;
 }
 
+.module-wrapper {
+	display: block;
+}
+
+.module-description{
+	font-weight:normal;
+}
+
 iframe.page-wrapper {
 	position: fixed;
 	top: 30px;
