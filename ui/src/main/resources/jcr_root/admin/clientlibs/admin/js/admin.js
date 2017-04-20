@@ -83,7 +83,30 @@ CMS.ext['richtext'] = {
 CMS.ext['slingform'] = {
 	decorate: function($ctx){
 		$ctx.find('.slingform').submit(function(){
+			if($('#cms--autoname').length > 0){
+				var name = $('select[name="sling:resourceType"]').val();
+				name = name.substr(name.lastIndexOf('/')+1);
+				$('#cms--autoname').val(name);
+			}
+			
 			$form = $(this);
+			var jcrcontent = false;
+			$form.find('input').each(function(idx,inp){
+				if(inp.name.indexOf('jcr:content') != -1){
+					jcrcontent = true;
+				}
+			});
+			if(jcrcontent){
+				$form.append('<input type="hidden" name="jcr:content/jcr:lastModified" />');
+				$form.append('<input type="hidden" name="jcr:content/jcr:lastModifiedBy" />');
+				$form.append('<input type="hidden" name="jcr:content/jcr:created" />');
+				$form.append('<input type="hidden" name="jcr:content/jcr:createdBy" />');
+			} else {
+				$form.append('<input type="hidden" name="jcr:lastModified" />');
+				$form.append('<input type="hidden" name="jcr:lastModifiedBy" />');
+				$form.append('<input type="hidden" name="jcr:created" />');
+				$form.append('<input type="hidden" name="jcr:createdBy" />');
+			}
 			$.ajax({
 				url: $form.attr('action'),
 				type: 'POST',

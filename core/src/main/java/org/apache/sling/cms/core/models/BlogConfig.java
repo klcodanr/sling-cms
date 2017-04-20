@@ -1,8 +1,8 @@
 package org.apache.sling.cms.core.models;
 
-import javax.annotation.Resource;
 import javax.inject.Inject;
 
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.cms.CMSConstants;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
@@ -15,7 +15,12 @@ import org.apache.sling.models.annotations.Optional;
 public interface BlogConfig {
 
 	static BlogConfig getBlogConfig(Site site) {
-		return site.getConfig().getChild(CMSConstants.BLOG_CONFIG_SUBPATH).adaptTo(BlogConfig.class);
+		Resource blogConfigRsrc = site.getConfig().getChild(CMSConstants.BLOG_CONFIG_SUBPATH);
+		if (blogConfigRsrc != null) {
+			return blogConfigRsrc.adaptTo(BlogConfig.class);
+		} else {
+			return null;
+		}
 	}
 
 	@Inject
@@ -26,7 +31,7 @@ public interface BlogConfig {
 
 	@Inject
 	@Default(booleanValues = false)
-	boolean isGenerateTags();
+	Boolean getGenerateTags();
 
 	@Inject
 	@Optional

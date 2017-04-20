@@ -11,7 +11,7 @@
 <br/>
 <div class="row">
 	<div class="col-lg-12">
-		<a class="fetch-html-modal btn btn-primary" data-path="form" data-title="Add Page" href="/admin/site/createpost.html${slingRequest.requestPathInfo.suffix}"><i class="fa fa-plus"></i> Post</a>
+		<a class="fetch-html-modal btn btn-primary" data-path="form" data-title="Add Post" href="/admin/site/createpost.html${slingRequest.requestPathInfo.suffix}"><i class="fa fa-plus"></i> Post</a>
 	</div>
 </div>
 <br/>
@@ -21,6 +21,7 @@
             <thead>
                 <tr>
                     <th>Title</th>
+                    <th>Publication Date</th>
                     <th>Published</th>
                     <th>Last Modified</th>
                     <th>Actions</th>
@@ -34,6 +35,9 @@
 	                    		<sling:encode value="${post.title}" mode="HTML" />
 			                </a>
 	                    	<small>(<sling:encode value="${post.name}" mode="HTML" />)</small>
+	                    </td>
+	                    <td>
+	                    	<fmt:formatDate type="both" dateStyle="medium" timeStyle="medium" value="${post.publicationDate}" />
 	                    </td>
 	                    <td>
 	                    	<c:choose>

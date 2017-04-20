@@ -27,6 +27,11 @@
 						"name": "sling:resourceType",
 						"optionsScript": "/libs/cms/components/editor/scripts/resourceTypeOptions.jsp",
 						"required": true
+					},
+					"name": {
+						"jcr:primaryType": "nt:unstructured",
+						"sling:resourceType": "cms/components/fields/autoname",
+						"name": ":name"
 					}
 				}
 			}

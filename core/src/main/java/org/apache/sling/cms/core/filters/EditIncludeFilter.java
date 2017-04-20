@@ -40,22 +40,24 @@ public class EditIncludeFilter implements Filter {
 		String editPath = getEditPath(resource);
 		PrintWriter writer = null;
 
-		boolean last = false;
-		boolean first = false;
-		Iterator<Resource> children = resource.getParent().listChildren();
-		if (!children.hasNext() || children.next().getPath().equals(resource.getPath())) {
-			first = true;
-		}
-		if (children.hasNext()) {
-			while (children.hasNext()) {
-				if (children.next().getPath().equals(resource.getPath()) && !children.hasNext()) {
+		if (enabled && StringUtils.isNotEmpty(editPath)) {
+			boolean last = false;
+			boolean first = false;
+			if (resource != null && resource.getParent() != null) {
+				Iterator<Resource> children = resource.getParent().listChildren();
+				if (!children.hasNext() || children.next().getPath().equals(resource.getPath())) {
+					first = true;
+				}
+				if (children.hasNext()) {
+					while (children.hasNext()) {
+						if (children.next().getPath().equals(resource.getPath()) && !children.hasNext()) {
+							last = true;
+						}
+					}
+				} else {
 					last = true;
 				}
 			}
-		} else {
-			last = true;
-		}
-		if (enabled && StringUtils.isNotEmpty(editPath)) {
 			writer = response.getWriter();
 			writer.write("<div class=\"cms--component\" data-cms-resource-path=\"" + resource.getPath()
 					+ "\" data-cms-resource-type=\"" + resource.getResourceType() + "\" data-cms-edit=\"" + editPath

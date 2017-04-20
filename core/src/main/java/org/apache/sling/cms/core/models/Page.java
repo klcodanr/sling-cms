@@ -8,13 +8,20 @@ import javax.inject.Named;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.cms.CMSConstants;
+import org.apache.sling.cms.CMSUtils;
 import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class)
 public class Page extends AbstractContentModel {
-	
-	public static final Page getContainingPage(Resource resource){
-		return resource.adaptTo(PageManager.class).getPage();
+
+	public static final Page getContainingPage(Resource resource) {
+		Resource pageRsrc = CMSUtils.findParentResourceofType(resource, CMSConstants.NODE_TYPE_PAGE);
+		Page page = null;
+		if (pageRsrc != null) {
+			page = pageRsrc.adaptTo(Page.class);
+		}
+		return page;
 	}
 
 	@Inject
