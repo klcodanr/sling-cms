@@ -1,4 +1,11 @@
-# Apache Sling CM
+
+# DEPRECATION NOTICE
+
+__This application is deprecated and is replaced by the version in the [Sling Whiteboard](https://github.com/apache/sling-whiteboard/tree/master/cms).__
+
+# Apache Sling CMS
+
+
 
 A reference implementation of a simple Content Management System built in Apache Sling.
 
