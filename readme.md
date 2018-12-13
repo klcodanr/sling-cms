@@ -1,7 +1,7 @@
 
 # DEPRECATION NOTICE
 
-__This application is deprecated and is replaced by the version in the [Sling Whiteboard](https://github.com/apache/sling-whiteboard/tree/master/cms).__
+__This application is deprecated and is replaced by the [Apache Sling CMS](https://github.com/apache/sling-org-apache-sling-app-cms).__
 
 # Apache Sling CMS
 
